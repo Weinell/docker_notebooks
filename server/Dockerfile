@@ -15,8 +15,7 @@ RUN apt-get update \
         firefox \
     && pip install \
         selenium \
-        webdriver-manager \
-        mkl
+        webdriver-manager
 
 # Add latest FireFox
 RUN set -x \
@@ -34,7 +33,7 @@ RUN set -x \
    && curl -sSLO https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VER}/geckodriver-${GECKODRIVER_VER}-linux64.tar.gz \
    && tar zxf geckodriver-*.tar.gz \
    && mv geckodriver /usr/bin/ \
-   && chmod+ geckodriver
+   && chmod +x /usr/bin/geckodriver
 
 # install pygraphviz to use with networkx drawing graphs (week 9)
 # RUN apt-get install -y python-pygraphviz \
@@ -49,7 +48,7 @@ RUN apt-get update && sudo apt-get upgrade -y \
 && pip3 install opencv-python
 
 # Biblioteker til brug for tesseract
-RUN apt-get update && apt-get install -y python3.10-dev libxml2-dev libxslt1-dev antiword unrtf poppler-utils pstotext  \
+RUN apt-get update && apt-get install -y python3-dev libxml2-dev libxslt1-dev antiword unrtf poppler-utils pstotext  \
 flac ffmpeg lame libmad0 libsox-fmt-mp3 sox libjpeg-dev swig 
 
 # RUN apt-get update && apt-get install python3-pil tesseract-ocr libtesseract-dev tesseract-ocr-eng tesseract-ocr-script-latn

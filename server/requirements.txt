@@ -1,7 +1,7 @@
 Click
 # Flask
 selenium
-#webdriver-manager
+# webdriver-manager
 openpyxl
 html5lib
 lxml
@@ -20,7 +20,7 @@ folium
 theano
 tensorflow
 keras
-#mkl
+# mkl
 
 # itsdangerous==1.1.0
 # Jinja2==2.10.1
