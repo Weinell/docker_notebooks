@@ -20,7 +20,8 @@ RUN apt-get update \
         webdriver-manager \
         graphviz \
         tensorflow \
-        keras
+        keras \
+        wordcloud
 
 # Add latest FireFox
 RUN set -x \
