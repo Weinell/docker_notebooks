@@ -12,6 +12,7 @@ pandas
 numpy
 python-dateutil
 pytz
+seaborn
 
 # SQLAlchemy
 # mysql-connector-python
