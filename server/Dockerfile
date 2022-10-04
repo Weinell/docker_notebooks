@@ -1,6 +1,8 @@
 # Python is chosen instead of "latest" to make it easier to maintain dependencies
-FROM jupyter/scipy-notebook:PYTHON_VER
+ARG JUPYTER_VER python-3.10
+FROM jupyter/scipy-notebook:JUPYTER_VER
 
+# Change PYTHON_VER if you change JUPYTER_VER
 ENV PYTHON_VER python-3.10
 ENV GECKODRIVER_VER v0.31.0
 ENV FIREFOX_VER 105.0
