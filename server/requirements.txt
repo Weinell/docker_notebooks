@@ -1,5 +1,4 @@
 Click
-# Flask
 selenium
 webdriver-manager
 openpyxl
@@ -14,11 +13,7 @@ python-dateutil
 pytz
 seaborn
 
-# SQLAlchemy
-# mysql-connector-python
-# docopt
 wget
-# PyInquirer
 graphviz 
 folium
 
@@ -30,11 +25,3 @@ sklearn
 opencv-python
 nltk
 wordcloud
-# mkl
-
-# itsdangerous==1.1.0
-# Jinja2==2.10.1
-# MarkupSafe==1.1.1
-# uWSGI==2.0.18
-# Werkzeug==0.15.3
-
