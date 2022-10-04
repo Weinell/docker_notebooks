@@ -13,6 +13,7 @@ numpy
 python-dateutil
 pytz
 seaborn
+opencv-python
 
 # SQLAlchemy
 # mysql-connector-python
