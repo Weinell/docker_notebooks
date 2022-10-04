@@ -15,7 +15,8 @@ RUN apt-get update \
         curl \
         tree \
         firefox \
-    && pip install \
+        graphviz \
+    && pip3 install \
         selenium \
         webdriver-manager \
         graphviz \
@@ -64,13 +65,13 @@ flac ffmpeg lame libmad0 libsox-fmt-mp3 sox libjpeg-dev swig
 
 
 RUN apt-get install -y tesseract-ocr
-RUN pip install pytesseract 
+RUN pip3 install pytesseract 
 
 
 # # solve a jupyter notebook problem with kernel dying.
-RUN pip install -U jupyter_console
+RUN pip3 install -U jupyter_console
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # # for exercise week 11
 # RUN pip install torch
