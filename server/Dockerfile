@@ -1,4 +1,4 @@
-# Python 3.10.6 is chosen to make it easier to maintain dependencies
+# Python is chosen instead of "latest" to make it easier to maintain dependencies
 FROM jupyter/scipy-notebook:PYTHON_VER
 
 ENV PYTHON_VER python-3.10
