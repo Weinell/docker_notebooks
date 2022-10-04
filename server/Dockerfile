@@ -1,5 +1,7 @@
-FROM jupyter/scipy-notebook:latest
+# Python 3.10.6 is chosen to make it easier to maintain dependencies
+FROM jupyter/scipy-notebook:PYTHON_VER
 
+ENV PYTHON_VER python-3.10
 ENV GECKODRIVER_VER v0.31.0
 ENV FIREFOX_VER 105.0
 
@@ -35,49 +37,29 @@ RUN set -x \
    && mv geckodriver /usr/bin/ \
    && chmod +x /usr/bin/geckodriver
 
-# install pygraphviz to use with networkx drawing graphs (week 9)
-# RUN apt-get install -y python-pygraphviz \
-# && conda install pygraphviz
 
 # # run GUI apps (week 7 with selenium) (seems to create a jupyter kernel problem that is solved with second command in this line)
 # RUN apt-get install -y python3.7-tk && pip install -U jupyter_console
 
 # install opencv 
 RUN apt-get update && sudo apt-get upgrade -y \
-&& apt-get install -y python3-opencv \
+&& apt-get install -y {PYTHON_VER}-opencv \
 && pip3 install opencv-python
 
 # Biblioteker til brug for tesseract
-RUN apt-get update && apt-get install -y python3-dev libxml2-dev libxslt1-dev antiword unrtf poppler-utils pstotext  \
+RUN apt-get update && apt-get install -y {PYTHON_VER}-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    antiword \
+    unrtf \
+    poppler-utils \
+    pstotext \
 flac ffmpeg lame libmad0 libsox-fmt-mp3 sox libjpeg-dev swig 
 
-# RUN apt-get update && apt-get install python3-pil tesseract-ocr libtesseract-dev tesseract-ocr-eng tesseract-ocr-script-latn
+
 RUN apt-get install -y tesseract-ocr
 RUN pip install pytesseract 
 
-# # For running selenium with xserver
-# RUN pip install pyvirtualdisplay
-
-# # install pygraphviz (week 10)
-# RUN pip install graphviz folium
-
-# # install tensorflow, keras and theano (used in week 11)
-# RUN pip install theano tensorflow keras
-
-# # install nltk for text processesing
-# RUN pip install nltk
-
-# # use google sheets to read from
-# #RUN pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib && pip install --upgrade six --user
-
-# # For reading text from pdf, 
-# RUN pip install textract
-
-# # For testing
-# RUN pip install pytest
-
-# # # add our user to the video group to allow it to use the camera.
-# # RUN sudo usermod -a -G video joyvan
 
 # # solve a jupyter notebook problem with kernel dying.
 RUN pip install -U jupyter_console
@@ -98,10 +80,3 @@ ENV PATH="${PATH}:/tmp"
 USER $NB_UID
 WORKDIR $HOME
 
-# ENV FLASK_APP="flask/flask_app.py"
-# ENV JUPYTER_RUNTIME_DIR="/tmp"
-# # RUN echo "$PWD"
-# # COPY ./flask/flask_app.py flask_app.py
-# # RUN ["flask","run","--host=0.0.0.0"]
-# # RUN ls
-# # RUN ["python","-m","flask_app.py"]
