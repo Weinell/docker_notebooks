@@ -29,6 +29,7 @@ keras
 sklearn
 opencv-python
 nltk
+wordcloud
 # mkl
 
 # itsdangerous==1.1.0
