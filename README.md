@@ -5,4 +5,8 @@ Throughout the semester you must have **10 approved handins** to qualify for exa
 
 Preliminary Class schedule is shown below (subject to change)
 
-
+# Docker container:
+## Open a new terminal and cd into the notebook_server folder
+## Run 'docker-compose build --no-cache'
+## Run 'docker-compose up -d'
+## Run 'docker logs notebookserver' to get your token
