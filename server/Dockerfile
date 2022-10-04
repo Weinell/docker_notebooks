@@ -17,7 +17,8 @@ RUN apt-get update \
         firefox \
     && pip install \
         selenium \
-        webdriver-manager
+        webdriver-manager \
+        graphviz
 
 # Add latest FireFox
 RUN set -x \
