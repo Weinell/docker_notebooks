@@ -1,9 +1,6 @@
 # Python is chosen instead of "latest" to make it easier to maintain dependencies
-ARG JUPYTER_VER python-3.10
-FROM jupyter/scipy-notebook:JUPYTER_VER
+FROM jupyter/scipy-notebook:python-3.10
 
-# Change PYTHON_VER if you change JUPYTER_VER
-ENV PYTHON_VER python-3.10
 ENV GECKODRIVER_VER v0.31.0
 ENV FIREFOX_VER 105.0
 
@@ -45,11 +42,11 @@ RUN set -x \
 
 # install opencv 
 RUN apt-get update && sudo apt-get upgrade -y \
-&& apt-get install -y {PYTHON_VER}-opencv \
+&& apt-get install -y python3-opencv \
 && pip3 install opencv-python
 
 # Biblioteker til brug for tesseract
-RUN apt-get update && apt-get install -y {PYTHON_VER}-dev \
+RUN apt-get update && apt-get install -y python3-dev \
     libxml2-dev \
     libxslt1-dev \
     antiword \
