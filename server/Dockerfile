@@ -1,4 +1,5 @@
 # Python is chosen instead of "latest" to make it easier to maintain dependencies
+# Find version here https://hub.docker.com/r/jupyter/scipy-notebook/tags/
 FROM jupyter/scipy-notebook:python-3.10
 
 ENV GECKODRIVER_VER v0.31.0
