@@ -21,7 +21,9 @@ RUN apt-get update \
         graphviz \
         tensorflow \
         keras \
-        wordcloud
+        nltk \
+        wordcloud \
+        seaborn
 
 # Add latest FireFox
 RUN set -x \
