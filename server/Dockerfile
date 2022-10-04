@@ -18,7 +18,9 @@ RUN apt-get update \
     && pip install \
         selenium \
         webdriver-manager \
-        graphviz
+        graphviz \
+        tensorflow \
+        keras
 
 # Add latest FireFox
 RUN set -x \
